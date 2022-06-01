@@ -1,0 +1,21 @@
+---
+# defaults file for actions_runner
+actions_runner_ver: 2.292.0
+actions_runner_os: linux
+actions_runner_arch: x64
+actions_runner_parent_install_dir: /usr/local
+actions_runner_mirror: https://github.com/actions/runner/releases/download
+actions_runner_checksums:
+  '2.292.0':
+    # https://github.com/actions/runner/releases/download/v2.292.0/actions-runner-linux-arm-2.292.0.tar.gz
+    linux-arm: sha256:e8e7f6ceffc3778f27131f6df4ac88f139687082d0259421030eee7fc24a2bb3
+    # https://github.com/actions/runner/releases/download/v2.292.0/actions-runner-linux-arm64-2.292.0.tar.gz
+    linux-arm64: sha256:7e01a10a30688bf0fff984e4aaddf402d51def795ffad7717786a024c117a6bb
+    # https://github.com/actions/runner/releases/download/v2.292.0/actions-runner-linux-x64-2.292.0.tar.gz
+    linux-x64: sha256:14839ba9f3da01abdd51d1eae0eb53397736473542a8fae4b7618d05a5af7bb5
+    # https://github.com/actions/runner/releases/download/v2.292.0/actions-runner-osx-arm64-2.292.0.tar.gz
+    osx-arm64: sha256:9dca8355c6fcd3d6636984cc3d7876ff6f321aa876b6e3a03a37467b3fa0f5e6
+    # https://github.com/actions/runner/releases/download/v2.292.0/actions-runner-osx-x64-2.292.0.tar.gz
+    osx-x64: sha256:f1a1aea9524f72f962d906fa2a0f1e3c1e08d0497ea2aab803ac8feb0bc6c2b4
+    # https://github.com/actions/runner/releases/download/v2.292.0/actions-runner-win-x64-2.292.0.zip
+    win-x64: sha256:f27dae1413263e43f7416d719e0baf338c8d80a366fed849ecf5fffcec1e941f
