@@ -35,4 +35,4 @@ dlver () {
     dl $ver win x64 zip
 }
 
-dlver ${1:-2.292.0}
+dlver ${1:-2.293.0}
