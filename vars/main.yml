@@ -1,5 +1,7 @@
 ---
 # vars file for actions_runner
+actions_runner_os: '{{ actions_runner_os_map[ansible_system] }}'
+actions_runner_arch: '{{ actions_runner_arch_map[ansible_architecture] }}'
 actions_runner_platform: '{{ actions_runner_os }}-{{ actions_runner_arch }}'
 actions_runner_name: actions-runner-{{ actions_runner_platform }}-{{ actions_runner_ver }}
 actions_runner_archive: '{{ actions_runner_name }}.tar.gz'

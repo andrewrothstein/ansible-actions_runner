@@ -33,6 +33,7 @@ dlver () {
     dl $ver osx arm64
     dl $ver osx x64
     dl $ver win x64 zip
+    dl $ver win arm64 zip
 }
 
-dlver ${1:-2.293.0}
+dlver ${1:-2.299.1}
