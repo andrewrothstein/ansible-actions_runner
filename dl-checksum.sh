@@ -36,4 +36,4 @@ dlver () {
     dl $ver win arm64 zip
 }
 
-dlver ${1:-2.301.1}
+dlver ${1:-2.306.0}
