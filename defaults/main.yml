@@ -1,6 +1,6 @@
 ---
 # defaults file for actions_runner
-actions_runner_ver: 2.306.0
+actions_runner_ver: 2.316.1
 actions_runner_os_map:
   Linux: linux
   Darwin: osx
@@ -99,3 +99,18 @@ actions_runner_checksums:
     win-x64: sha256:998fd610e6024cb7015240a82a635a877aab4d6dfb0de89bdd167b0128452721
     # https://github.com/actions/runner/releases/download/v2.306.0/actions-runner-win-arm64-2.306.0.zip
     win-arm64: sha256:70655f84090b0e4630ce310777a0a955d47390fdaf136687bc854d006e9f3e3a
+  '2.316.1':
+    # https://github.com/actions/runner/releases/download/v2.316.1/actions-runner-linux-arm-2.316.1.tar.gz
+    linux-arm: sha256:534f210f1c854e24948ab9a263eb36797301946aba1760101ad96fc693873f43
+    # https://github.com/actions/runner/releases/download/v2.316.1/actions-runner-linux-arm64-2.316.1.tar.gz
+    linux-arm64: sha256:4f506deac376013a95683fd5873e9c40f27e5790895147ccaa24d7c970532249
+    # https://github.com/actions/runner/releases/download/v2.316.1/actions-runner-linux-x64-2.316.1.tar.gz
+    linux-x64: sha256:d62de2400eeeacd195db91e2ff011bfb646cd5d85545e81d8f78c436183e09a8
+    # https://github.com/actions/runner/releases/download/v2.316.1/actions-runner-osx-arm64-2.316.1.tar.gz
+    osx-arm64: sha256:75129881e1b80857d235d95a390106470536f5669354cb26af8651861398fa97
+    # https://github.com/actions/runner/releases/download/v2.316.1/actions-runner-osx-x64-2.316.1.tar.gz
+    osx-x64: sha256:392b9d7b6d5b4d4f3814dbf874641b894f0c72447cdf05ce93158832d2d49b6b
+    # https://github.com/actions/runner/releases/download/v2.316.1/actions-runner-win-x64-2.316.1.zip
+    win-x64: sha256:e41debe4f0a83f66b28993eaf84dad944c8c82e2c9da81f56a850bc27fedd76b
+    # https://github.com/actions/runner/releases/download/v2.316.1/actions-runner-win-arm64-2.316.1.zip
+    win-arm64: sha256:3efe553a881f24eb20e79750033f69c23fcff35d78448aedf539f606cf9b869f

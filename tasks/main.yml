@@ -1,8 +1,6 @@
 ---
-- include_role:
-    name: andrewrothstein.unarchivedeps
-- name: resolve platform specific vars
-  include_vars: '{{ item }}'
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
     - files:
         - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
@@ -11,41 +9,45 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: searching for install at {{ actions_runner_install_dir }}
+- name: Checking for install at {{ actions_runner_install_dir }}
   become: true
-  stat:
+  ansible.builtin.stat:
     path: '{{ actions_runner_install_dir }}'
   changed_when: false
   register: actions_runner_binary
-- when: not actions_runner_binary.stat.exists
+- name: Downloading and installing actions runner
+  when: not actions_runner_binary.stat.exists
   block:
-    - name: downloading {{ actions_runner_url }} to {{ actions_runner_tmp_archive }}
+    - name: Downloading {{ actions_runner_url }} to {{ actions_runner_tmp_archive }}
       become: true
       become_user: root
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ actions_runner_url }}'
         dest: '{{ actions_runner_tmp_archive }}'
         checksum: '{{ actions_runner_checksum }}'
-        mode: 0644
-    - name: mkdir {{ actions_runner_install_dir }}
+        mode: '644'
+    - name: Mkdir {{ actions_runner_install_dir }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ actions_runner_install_dir }}'
-        mode: 0755
+        mode: '755'
         state: directory
-    - name: unarchiving {{ actions_runner_tmp_archive }} to {{ actions_runner_install_dir }}
+    - name: Installing andrewrothstein.unarchivedeps
+      ansible.builtin.include_role:
+        name: andrewrothstein.unarchivedeps
+    - name: Unarchiving {{ actions_runner_tmp_archive }} to {{ actions_runner_install_dir }}
       become: true
       become_user: root
-      unarchive:
+      ansible.builtin.unarchive:
         remote_src: true
         src: '{{ actions_runner_tmp_archive }}'
         dest: '{{ actions_runner_install_dir }}'
         creates: '{{ actions_runner_install_bin_dir }}'
   always:
-    - name: rm {{ actions_runner_tmp_archive }}
+    - name: Rm {{ actions_runner_tmp_archive }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ actions_runner_tmp_archive }}'
         state: absent
